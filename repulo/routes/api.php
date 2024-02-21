@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\FlightController;
+use App\Http\Controllers\TravelController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +25,5 @@ Route::get('airlines', [AirlineController::class, 'index']);
 Route::get('airlines/{id}', [AirlineController::class, 'show']);
 Route::post('airlines', [AirlineController::class, 'store']);
 Route::put('airlines/{id}', [AirlineController::class, 'update']);
+
+Route::get('ossz/{id}', [TravelController::class, 'osszesJarat']);
