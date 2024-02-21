@@ -27,3 +27,4 @@ Route::post('airlines', [AirlineController::class, 'store']);
 Route::put('airlines/{id}', [AirlineController::class, 'update']);
 
 Route::get('ossz/{id}', [TravelController::class, 'osszesJarat']);
+Route::get('sajat', [TravelController::class, 'sajatJarat']);

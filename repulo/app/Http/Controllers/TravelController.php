@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Travel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class TravelController extends Controller
@@ -44,4 +45,15 @@ class TravelController extends Controller
         ->where('f.flight_id', $id) 
         ->get();
     }
+
+    public function sajatJarat(){
+        $user = Auth::user();	//bejelentkezett felhasználó
+        $travel = Travel::with('user')->where('user_id','=',$user->id)->get();
+        return $travel;
+    }
+
+
+
+
+
 }
